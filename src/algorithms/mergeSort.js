@@ -1,5 +1,5 @@
 
-export const mergeSort = array => {
+function mergeSort(array) {
     const animations = []
     if (array.length <= 1) return array;
     const auxiliaryArray = array.slice();
@@ -57,7 +57,7 @@ function doMerge(mainArray, startIdx, middleIdx, endIdx, auxiliaryArray, animati
 //     return mergeSortedArrays(mergeSort(leftHalf), mergeSort(rightHalf));
 // }
 
-// export default mergeSort;
+export default mergeSort;
 
 // function mergeSortedArrays(leftHalf, rightHalf) {
 //     const sortedArray = new Array(leftHalf.length + rightHalf.length);

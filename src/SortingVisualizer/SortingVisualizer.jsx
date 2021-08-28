@@ -1,6 +1,8 @@
 import React from 'react';
 import './SortingVisualizer.css'
-import * as sortingAlgorithms from '../algorithms/sortingAlgorithms'
+//import * as sortingAlgorithms from '../algorithms/sortingAlgorithms'
+import mergeSort from '../algorithms/mergeSort'
+import heapSort from '../algorithms/heapSort'
 
 export default class SortingVisualizer extends React.Component {
     constructor(props) {
@@ -24,8 +26,8 @@ export default class SortingVisualizer extends React.Component {
     }
 
     mergeSort() {
-        // const testSort = this.state.array.slice().sort((a, b) => a - b);
-        const animations = sortingAlgorithms.mergeSort(this.state.array);
+        //const testSort = this.state.array.slice().sort((a, b) => a - b);
+        const animations = mergeSort(this.state.array);
         console.log(animations[0])
         const newAnimations = [];
         for (const animation of animations) {
@@ -58,6 +60,14 @@ export default class SortingVisualizer extends React.Component {
                 }, i * 5)
             }
         }
+    }
+
+        heapSort() {
+            // const testSort = this.state.array.slice().sort((a, b) => a - b);
+            // const heapS = heapSort(this.state.array)
+            // console.log(arraysAreEqual)
+
+        }
 
 
         // for (let i = 0; i < animations.length; i++) {
@@ -74,20 +84,20 @@ export default class SortingVisualizer extends React.Component {
         // }
       
         // console.log(arraysAreEqual(testSort, sortedArray));
-    }
+    
 
-    // testSortingAlgos() {
-    //     for (let i = 0; i < 100; i++) {
-    //         const array = [];
-    //         const length = randomInteger(1, 1000);
-    //         for (let i = 0; i < length; i++) {
-    //             array.push(randomInteger(-1000, 1000));
-    //         } 
-    //         const testSort = this.state.array.slice().sort((a, b) => a - b);
-    //         const sortedArray = mergeSort(this.state.array);
-    //         console.log(arraysAreEqual(testSort, sortedArray))
-    //     }
-    // }
+    testSortingAlgos() {
+        for (let i = 0; i < 100; i++) {
+            const array = [];
+            const length = randomInteger(1, 1000);
+            for (let i = 0; i < length; i++) {
+                array.push(randomInteger(-1000, 1000));
+            } 
+            const testSort = this.state.array.slice().sort((a, b) => a - b);
+            const sortedArray = heapSort(this.state.array);
+            console.log(arraysAreEqual(testSort, sortedArray))
+        }
+    }
 
     render() {
         const {array} = this.state;
@@ -98,12 +108,13 @@ export default class SortingVisualizer extends React.Component {
                     <div 
                         className="array-bar" 
                         key={idx}
-                        style={{height: `${value / 12}vh`}}>
+                        style={{height: `${value / 14}vh`}}>
                     </div>
                 ))}
                 <div>
                     <button onClick={() => this.generateArray()}>New Array</button>
                     <button onClick={() => this.mergeSort()}>Merge Sort</button>
+                    <button onClick={() => this.heapSort()}>Heap Sort</button>
                     <button onClick={() => this.testSortingAlgos()}>Test Algorithms</button>
                 </div>
             </div>

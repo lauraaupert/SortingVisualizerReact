@@ -1,10 +1,11 @@
+
 .array-container {
     position: absolute;
-    left: 100px;
+    align-self: center;
 }
 
 .array-bar {
-    width: 4px;
+    width: .7vw;
     background-color: slategray;
     display: inline-block;
     margin: 0 1px;
