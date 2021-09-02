@@ -63,10 +63,9 @@ export default class SortingVisualizer extends React.Component {
     }
 
         heapSort() {
-            // const testSort = this.state.array.slice().sort((a, b) => a - b);
-            // const heapS = heapSort(this.state.array)
-            // console.log(arraysAreEqual)
-
+            const animations = heapSort(this.state.array);
+            console.log(animations[0])
+            const newAnimations = [];
         }
 
 
